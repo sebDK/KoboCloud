@@ -3,6 +3,7 @@
 linkLine="$1"
 localFile="$2"
 user="$3"
+outDir="$4"
 outputFileTmp="/tmp/kobo-remote-file-tmp.log"
 
 # add the epub extension to kepub files
@@ -22,6 +23,7 @@ fi
 
 echo "Download: "$curlCommand -k --silent -C - -L -o "$localFile" "$linkLine" -v
 
+cd "$outDir"
 $curlCommand -k --silent -C - -L -o "$localFile" "$linkLine" -v 2>$outputFileTmp
 status=$?
 echo "Status: $status"
