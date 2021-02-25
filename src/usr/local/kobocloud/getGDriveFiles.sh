@@ -26,7 +26,7 @@ do
     outFileName=`echo $fileName | tr ' ' '_'`
     localFile="$outDir/$outFileName"
 
-    $KC_HOME/getRemoteFile.sh "$linkLine" "$localFile"
+    $KC_HOME/getRemoteFile.sh "$linkLine" "$localFile" "" "$outDir"
     if [ $? -ne 0 ] ; then
         echo "Having problems contacting Google Drive. Try again in a couple of minutes."
         exit
